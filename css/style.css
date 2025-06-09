@@ -1,0 +1,401 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Letras das Paginas*/
+body {
+  font-family: Arial, sans-serif;
+  color: white;
+}
+
+/* Fundos por tipo de página */
+body.gif-pages {
+  background: url('../imagens/rexx4.gif') no-repeat center center fixed;
+  background-size: cover;
+}
+
+body.gif-pages::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: rgba(68, 68, 68, 0.6);
+  z-index: 0;
+}
+
+body.gif-page {
+  background: linear-gradient(to bottom, #ff5f1f, #1a1a1a  ); 
+}
+
+body.historia-page {
+  background: linear-gradient(to bottom, #1a1a1a, #ff5f1f);
+  background-attachment: fixed;
+}
+
+body.curiosidades {
+  background: url('../imagens/ben10-generator-rex.gif') no-repeat center center fixed;
+  background-size: cover;
+}
+
+body.creditos{
+  background: url('../imagens/rex-gun.gif') no-repeat center center fixed;
+  background-size: cover;
+}
+ 
+body.galeria {
+  background: linear-gradient(to bottom, #1a1a1a, #ff5f1f);
+  background-attachment: fixed;
+}
+
+/* Elementos principais */
+main, header, footer {
+  position: relative;
+  z-index: 1;
+}
+
+header {
+  display: flex;
+  background-color: #797878;
+  justify-content: center;   /* centraliza horizontalmente */
+  align-items: center;       /* alinha verticalmente */
+  gap: 10px;                 /* espaço entre elementos */
+}
+
+.logo {
+  height: 100px;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.menu li a {
+  color: #000000;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 20px;
+  transition: color 0.3s ease;
+}
+
+.menu li a:hover {
+  color: #ff5f1f;
+}
+
+main {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+h1 {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 3rem;
+  margin-bottom: 40px;
+  color: #ff5f1f;
+}
+
+/* Página personagem.html - layout com menu lateral */
+.personagens-main {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  padding: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.menu-lateral {
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  border-radius: 15px;
+  min-width: 220px;
+  box-shadow: 0 0 15px rgba(255, 95, 31, 0.5);
+  height: fit-content;
+}
+
+.menu-lateral h2 {
+  font-size: 1.8em;
+  color: #ff5f1f;
+  margin-bottom: 10px;
+  text-align: center;
+  font-family: 'Bebas Neue', cursive;
+}
+
+.menu-lateral ul {
+  list-style: none;
+  padding: 0;
+}
+
+.menu-lateral li {
+  background-color: #1a1a1a;
+  color: white;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+  text-align: center;
+}
+
+.menu-lateral li:hover {
+  background-color: #ff5f1f;
+  color: #000;
+  font-weight: bold;
+}
+
+/* Cards dos personagens */
+.personagem-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.card {
+  display: none;
+  background-color: rgba(0, 0, 0, 0.75);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(255, 95, 31, 0.4);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.card.ativo {
+  display: block;
+}
+
+.card img {
+  width: 300px;
+  border-radius: 10px;
+  margin: 15px 0;
+  box-shadow: 0 0 12px rgba(255, 95, 31, 0.6);
+  transition: transform 0.3s ease;
+}
+
+.card img:hover {
+  transform: scale(1.05);
+}
+
+.card h2 {
+  font-size: 2rem;
+  font-family: 'Bebas Neue', cursive;
+  color: #ff5f1f;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+/* Animação fade-in */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .personagens-main {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .menu-lateral {
+    width: 100%;
+    text-align: center;
+  }
+
+  .personagem-info {
+    width: 100%;
+  }
+
+  .card img {
+    width: 100%;
+    max-width: 350px;
+  }
+
+}
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+main {
+  padding-bottom: 0; /* Zera o espaço inferior */
+}
+
+footer {
+  margin-top: auto;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+/* Seções gerais */
+section {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 12px;
+  box-shadow: 0 0 10px black;
+}
+
+h2 {
+  font-family: 'Bebas Neue', cursive;
+  color: #ff5f1f;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+p {
+  line-height: 1.6;
+  text-align: justify;
+}
+
+/* Animação */
+@keyframes energiaRex {
+  0% { transform: scale(1); filter: drop-shadow(0 0 5px #ff4500); }
+  50% { transform: scale(1.03); filter: drop-shadow(0 0 15px #ff4500); }
+  100% { transform: scale(1); filter: drop-shadow(0 0 5px #ff4500); }
+}
+
+.banner-animado {
+  animation: energiaRex 3s infinite ease-in-out;
+  transition: transform 0.3s, filter 0.3s;
+  border-radius: 12px;
+}
+
+#fotos #galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 25px;
+  justify-items: center;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#fotos #galeria img {
+  width: 100%;
+  height: auto;
+  max-height: 240px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+#fotos #galeria img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+ #fotos h2 {
+  text-align: center;
+  font-size: 28px;
+  color: #ff6600;
+  margin-bottom: 20px;
+  font-family: 'Comic Sans MS', cursive;
+}
+
+
+
+/* Curiosidades */
+.container-curiosidade {
+  background-color: rgba(10, 10, 10, 0.85);
+  max-width: 850px;
+  margin: 50px auto;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+  text-align: justify;
+}
+
+.container-curiosidade h1 {
+  text-align: center;
+  color: #ff6600;
+  font-size: 2.5em;
+  font-family: 'Comic Sans MS', sans-serif;
+  margin-bottom: 25px;
+}
+
+.container-curiosidade h2 {
+  color: #ff6600;
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.container-curiosidade p {
+  line-height: 1.7;
+  margin-bottom: 15px;
+  font-size: 1.1em;
+}
+
+.curiosidade-img {
+  display: block;
+  max-width: 100%;
+  margin: 20px auto;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255, 102, 0, 0.6);
+  transition: transform 0.3s ease;
+}
+
+.curiosidade-img:hover {
+  transform: scale(1.03);
+}
+
+.pagina-creditos {
+  background-color: #1e1e1e;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  background-image: url('fundo_creditos.jpg'); /* opcional */
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 20px;
+}
+
+.container-creditos {
+  max-width: 800px;
+  margin: auto;
+  background-color: rgba(0,0,0,0.7);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px #000;
+}
+
+.container-creditos h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #ff5f1f;
+}
+
+.container-creditos p, .container-creditos ul {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.container-creditos ul {
+  list-style: square;
+  padding-left: 20px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #ccc;
+}
+
